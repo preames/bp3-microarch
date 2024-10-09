@@ -1,0 +1,132 @@
+Running raw.out
+Running vadd-vv-e16_m1_vlmax.out
+-9223372036852264176 cycles, -9223372036853794875 instret (before)
+-9223372036832071110 cycles, -9223372036833634584 instret (after)
+20193066 cycles, 20160291 instret elapsed
+  ~1.001626 cycles-per-inst
+  ~1009.653300 cycles-per-iteration
+  ~1008.014550 insts-per-iteration
+Running vadd-vv-e16_m2_vlmax.out
+-9223372036852291841 cycles, -9223372036853799367 instret (before)
+-9223372036812017083 cycles, -9223372036833604547 instret (after)
+40274758 cycles, 20194820 instret elapsed
+  ~1.994311 cycles-per-inst
+  ~2013.737900 cycles-per-iteration
+  ~1009.741000 insts-per-iteration
+Running vadd-vv-e16_m4_vlmax.out
+-9223372036852365469 cycles, -9223372036853851731 instret (before)
+-9223372036772070881 cycles, -9223372036833625648 instret (after)
+80294588 cycles, 20226083 instret elapsed
+  ~3.969854 cycles-per-inst
+  ~4014.729400 cycles-per-iteration
+  ~1011.304150 insts-per-iteration
+Running vadd-vv-e16_mf2_vlmax.out
+-9223372036852298427 cycles, -9223372036853790150 instret (before)
+-9223372036832070086 cycles, -9223372036833610284 instret (after)
+20228341 cycles, 20179866 instret elapsed
+  ~1.002402 cycles-per-inst
+  ~1011.417050 cycles-per-iteration
+  ~1008.993300 insts-per-iteration
+Running vadd-vv-e16_mf4_vlmax.out
+-9223372036852313355 cycles, -9223372036853799450 instret (before)
+-9223372036832016358 cycles, -9223372036833609037 instret (after)
+20296997 cycles, 20190413 instret elapsed
+  ~1.005279 cycles-per-inst
+  ~1014.849850 cycles-per-iteration
+  ~1009.520650 insts-per-iteration
+Running vadd-vv-e16_mf8_vlmax.out
+Running vadd-vv-e32_m1_vlmax.out
+-9223372036852194822 cycles, -9223372036853770469 instret (before)
+-9223372036831905021 cycles, -9223372036833570902 instret (after)
+20289801 cycles, 20199567 instret elapsed
+  ~1.004467 cycles-per-inst
+  ~1014.490050 cycles-per-iteration
+  ~1009.978350 insts-per-iteration
+Running vadd-vv-e32_m2_vlmax.out
+-9223372036852306997 cycles, -9223372036853796565 instret (before)
+-9223372036812020965 cycles, -9223372036833591321 instret (after)
+40286032 cycles, 20205244 instret elapsed
+  ~1.993840 cycles-per-inst
+  ~2014.301600 cycles-per-iteration
+  ~1010.262200 insts-per-iteration
+Running vadd-vv-e32_m4_vlmax.out
+-9223372036852306207 cycles, -9223372036853795405 instret (before)
+-9223372036772057775 cycles, -9223372036833572743 instret (after)
+80248432 cycles, 20222662 instret elapsed
+  ~3.968243 cycles-per-inst
+  ~4012.421600 cycles-per-iteration
+  ~1011.133100 insts-per-iteration
+Running vadd-vv-e32_mf2_vlmax.out
+-9223372036852222581 cycles, -9223372036853789290 instret (before)
+-9223372036832013319 cycles, -9223372036833614429 instret (after)
+20209262 cycles, 20174861 instret elapsed
+  ~1.001705 cycles-per-inst
+  ~1010.463100 cycles-per-iteration
+  ~1008.743050 insts-per-iteration
+Running vadd-vv-e32_mf4_vlmax.out
+Running vadd-vv-e32_mf8_vlmax.out
+Running vadd-vv-e64_m1_vlmax.out
+-9223372036852237534 cycles, -9223372036853793609 instret (before)
+-9223372036831937996 cycles, -9223372036833611017 instret (after)
+20299538 cycles, 20182592 instret elapsed
+  ~1.005794 cycles-per-inst
+  ~1014.976900 cycles-per-iteration
+  ~1009.129600 insts-per-iteration
+Running vadd-vv-e64_m2_vlmax.out
+-9223372036852304384 cycles, -9223372036853803485 instret (before)
+-9223372036811966041 cycles, -9223372036833587428 instret (after)
+40338343 cycles, 20216057 instret elapsed
+  ~1.995362 cycles-per-inst
+  ~2016.917150 cycles-per-iteration
+  ~1010.802850 insts-per-iteration
+Running vadd-vv-e64_m4_vlmax.out
+-9223372036852188627 cycles, -9223372036853774373 instret (before)
+-9223372036771913680 cycles, -9223372036833547709 instret (after)
+80274947 cycles, 20226664 instret elapsed
+  ~3.968769 cycles-per-inst
+  ~4013.747350 cycles-per-iteration
+  ~1011.333200 insts-per-iteration
+Running vadd-vv-e64_mf2_vlmax.out
+Running vadd-vv-e64_mf4_vlmax.out
+Running vadd-vv-e8_m1_vlmax.out
+-9223372036852291440 cycles, -9223372036853776017 instret (before)
+-9223372036832020330 cycles, -9223372036833599551 instret (after)
+20271110 cycles, 20176466 instret elapsed
+  ~1.004691 cycles-per-inst
+  ~1013.555500 cycles-per-iteration
+  ~1008.823300 insts-per-iteration
+Running vadd-vv-e8_m2_vlmax.out
+-9223372036852338098 cycles, -9223372036853851520 instret (before)
+-9223372036812137179 cycles, -9223372036833669343 instret (after)
+40200919 cycles, 20182177 instret elapsed
+  ~1.991902 cycles-per-inst
+  ~2010.045950 cycles-per-iteration
+  ~1009.108850 insts-per-iteration
+Running vadd-vv-e8_m4_vlmax.out
+-9223372036852191982 cycles, -9223372036853767136 instret (before)
+-9223372036771765695 cycles, -9223372036833500366 instret (after)
+80426287 cycles, 20266770 instret elapsed
+  ~3.968382 cycles-per-inst
+  ~4021.314350 cycles-per-iteration
+  ~1013.338500 insts-per-iteration
+Running vadd-vv-e8_mf2_vlmax.out
+-9223372036852336153 cycles, -9223372036853848006 instret (before)
+-9223372036832153214 cycles, -9223372036833684010 instret (after)
+20182939 cycles, 20163996 instret elapsed
+  ~1.000939 cycles-per-inst
+  ~1009.146950 cycles-per-iteration
+  ~1008.199800 insts-per-iteration
+Running vadd-vv-e8_mf4_vlmax.out
+-9223372036852291645 cycles, -9223372036853775603 instret (before)
+-9223372036831788596 cycles, -9223372036833530917 instret (after)
+20503049 cycles, 20244686 instret elapsed
+  ~1.012762 cycles-per-inst
+  ~1025.152450 cycles-per-iteration
+  ~1012.234300 insts-per-iteration
+Running vadd-vv-e8_mf8_vlmax.out
+-9223372036852397863 cycles, -9223372036853856299 instret (before)
+-9223372036832191222 cycles, -9223372036833685933 instret (after)
+20206641 cycles, 20170366 instret elapsed
+  ~1.001798 cycles-per-inst
+  ~1010.332050 cycles-per-iteration
+  ~1008.518300 insts-per-iteration
