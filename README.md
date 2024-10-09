@@ -56,7 +56,15 @@ Observations:
 * Primitive integer vector add appears to take 4 cycles.  (Easiest to see for e8 < m1.)
 * LMUL appears to issue idependent operations with latencies increasing in a pipelined manner.  However, I have not been able to explain the exact numbers for m2, m4, and m8.  There's something go on there I don't fully understand.
 
+## Memory Operations
 
+### vle64_m4_x_VL, vlse_m4_x_VL, vlseg2e64_m4_x_VL
+
+Does the VL impact the runtime performance of vle64.v (unit strided load), vlse64.v (strided load), vlseg2e64.v (unit strided segment load NF=2)?  It would be suprising for it to have any impact on vle64.v given what we know of the hardware.  The other two are less clear from prior knowledge as reasonable implementations could be VL dependent.
+
+For vle64.v, this measurement appears a lot more noisy than the vadd.vv check for VL sensativity, but it appears there's no obvious pattern in VL impacting throughput.  The m4 operation averages ~8 cycles per instruction regardless of VL.  vlse64.v appears to again have no impact on runtime.  The m4 operation averages ~16 cycles per instruction regardless of VL.
+
+The segmented version is currently crashing and needs further investigation.
 
 
 ## Raw Template
