@@ -9,6 +9,23 @@ pi 3.  This code is intended for *exploration*, there are much better
 frameworks available for a true exhaustive search.  See e.g. microprobe
 or llvm-exegensis.
 
+## Usage
+
+Onetime setup:
+```
+mkdir bin
+```
+
+On each campaign run:
+```
+rm *.s bin/*.out
+python campaigns/vlse_LMUL_x_SEW_throughput/generate.py
+make -j5
+./run.sh > raw.out
+```
+
+WARNING: If you're cross building and copying to a separate run environment, make sure you kill the out binaries in both places.
+
 ## Basic Exploration (vadd.vv)
 
 ### Prior knowledge
