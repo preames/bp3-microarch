@@ -73,6 +73,25 @@ Observations:
 * Primitive integer vector add appears to take 4 cycles.  (Easiest to see for e8 < m1.)
 * LMUL appears to issue idependent operations with latencies increasing in a pipelined manner.  However, I have not been able to explain the exact numbers for m2, m4, and m8.  There's something go on there I don't fully understand.
 
+## Register Movement
+
+### vmvNr_throughput, vmvNr_latency
+
+|       | 1/thpt | latency |
+|-------|--------|---------|
+| vmv1r |  2     |   3     |
+| vmv2r |  4     |   4     |
+| vmv4r |  8     |   8     |
+| vmv8r |  16    |   16    |
+
+### vmvNr_special_cases
+
+vmv1r_self -- With a latency of 4, shows that self moves (which should be nops) aren't eliminated.
+
+vmv1r_dest_dep -- With a latency of 4, shows that vmv1r has an execution dependence on the destination register.  This is slightly surprising as this instructions semantics doesn't depend on the prior value of the destination.
+
+Weirdly, both of these take 4 cycles on average, not 3 as measured by the latency test above.  I ran another variant of the latency test (vmv1r_latency_alternating.s) with a slightly different structure.  It really does look like both of these cases are *slower* than a normal vmv1r, and thus the troughput numbers above probably shouldn't be trusted for these cases either.
+
 ## Memory Operations
 
 ### vle64_m4_x_VL, vlse_m4_x_VL, vlseg2e64_m4_x_VL

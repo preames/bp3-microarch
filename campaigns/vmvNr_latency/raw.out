@@ -1,0 +1,29 @@
+Running raw.out
+Running vmv1r.out
+-9223372036852292121 cycles, -9223372036853847944 instret (before)
+-9223372036791931359 cycles, -9223372036833603355 instret (after)
+60360762 cycles, 20244589 instret elapsed
+  ~2.981575 cycles-per-inst
+  ~3018.038100 cycles-per-iteration
+  ~1012.229450 insts-per-iteration
+Running vmv2r.out
+-9223372036852305911 cycles, -9223372036853786471 instret (before)
+-9223372036771975076 cycles, -9223372036833548618 instret (after)
+80330835 cycles, 20237853 instret elapsed
+  ~3.969336 cycles-per-inst
+  ~4016.541750 cycles-per-iteration
+  ~1011.892650 insts-per-iteration
+Running vmv4r.out
+-9223372036852369920 cycles, -9223372036853803068 instret (before)
+-9223372036691997199 cycles, -9223372036833497728 instret (after)
+160372721 cycles, 20305340 instret elapsed
+  ~7.898056 cycles-per-inst
+  ~8018.636050 cycles-per-iteration
+  ~1015.267000 insts-per-iteration
+Running vmv8r.out
+-9223372036852324218 cycles, -9223372036853843637 instret (before)
+-9223372036531312966 cycles, -9223372036833227747 instret (after)
+321011252 cycles, 20615890 instret elapsed
+  ~15.571060 cycles-per-inst
+  ~16050.562600 cycles-per-iteration
+  ~1030.794500 insts-per-iteration
