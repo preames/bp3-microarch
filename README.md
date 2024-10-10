@@ -92,6 +92,14 @@ vmv1r_dest_dep -- With a latency of 4, shows that vmv1r has an execution depende
 
 Weirdly, both of these take 4 cycles on average, not 3 as measured by the latency test above.  I ran another variant of the latency test (vmv1r_latency_alternating.s) with a slightly different structure.  It really does look like both of these cases are *slower* than a normal vmv1r, and thus the troughput numbers above probably shouldn't be trusted for these cases either.
 
+## dependence-on-dest
+
+The specification has a very special case where when VL=0 the result of most vector instructions must be the prior value of the destination register.  In particular, this applies even when the instruction is tail agnostic.  Tail agnostic otherwise allows all elements past VL to be set to -1 unconditionally, but has an exception when VL=0.
+
+The tests in this campaign exercise the VL=0 case (to check for potential slowdown in this special case), confirm chaining through the destination does force delay, and then try out all of the reasonable sounding dependency breaking idioms.
+
+In short, the BP3 does respect the dependency on the prior value of the destination register, handles VL=0 at full throughput, and has no identified dependency breaking idiom.
+
 ## Memory Operations
 
 ### vle64_m4_x_VL, vlse_m4_x_VL, vlseg2e64_m4_x_VL

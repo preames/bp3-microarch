@@ -1,0 +1,57 @@
+Running breaddep_zero_vmv_v_i.out
+-9223372036852223101 cycles, -9223372036853774284 instret (before)
+-9223372036771927293 cycles, -9223372036833535532 instret (after)
+80295808 cycles, 20238752 instret elapsed
+  ~3.967429 cycles-per-inst
+  ~4014.790400 cycles-per-iteration
+  ~1011.937600 insts-per-iteration
+Running breakdep_allones_vmv_v_i.out
+-9223372036852299563 cycles, -9223372036853773771 instret (before)
+-9223372036772007197 cycles, -9223372036833544455 instret (after)
+80292366 cycles, 20229316 instret elapsed
+  ~3.969109 cycles-per-inst
+  ~4014.618300 cycles-per-iteration
+  ~1011.465800 insts-per-iteration
+Running breakdep_allones_vor_vi.out
+-9223372036852140172 cycles, -9223372036853748131 instret (before)
+-9223372036770989718 cycles, -9223372036833193430 instret (after)
+81150454 cycles, 20554701 instret elapsed
+  ~3.948024 cycles-per-inst
+  ~4057.522700 cycles-per-iteration
+  ~1027.735050 insts-per-iteration
+Running breakdep_zero_vand_vi.out
+-9223372036852381931 cycles, -9223372036853856400 instret (before)
+-9223372036772083685 cycles, -9223372036833624592 instret (after)
+80298246 cycles, 20231808 instret elapsed
+  ~3.968911 cycles-per-inst
+  ~4014.912300 cycles-per-iteration
+  ~1011.590400 insts-per-iteration
+Running breakdep_zero_vmv_v_x.out
+-9223372036852256456 cycles, -9223372036853774605 instret (before)
+-9223372036771684061 cycles, -9223372036833473861 instret (after)
+80572395 cycles, 20300744 instret elapsed
+  ~3.968938 cycles-per-inst
+  ~4028.619750 cycles-per-iteration
+  ~1015.037200 insts-per-iteration
+Running breakdep_zero_vxor_vv.out
+-9223372036852362111 cycles, -9223372036853858345 instret (before)
+-9223372036771972440 cycles, -9223372036833610383 instret (after)
+80389671 cycles, 20247962 instret elapsed
+  ~3.970260 cycles-per-inst
+  ~4019.483550 cycles-per-iteration
+  ~1012.398100 insts-per-iteration
+Running dep_vadd_vv.out
+-9223372036852250373 cycles, -9223372036853775670 instret (before)
+-9223372036771070991 cycles, -9223372036833215173 instret (after)
+81179382 cycles, 20560497 instret elapsed
+  ~3.948318 cycles-per-inst
+  ~4058.969100 cycles-per-iteration
+  ~1028.024850 insts-per-iteration
+Running raw.out
+Running vlzero_vadd_vv.out
+-9223372036852173066 cycles, -9223372036853829533 instret (before)
+-9223372036831924824 cycles, -9223372036833668069 instret (after)
+20248242 cycles, 20161464 instret elapsed
+  ~1.004304 cycles-per-inst
+  ~1012.412100 cycles-per-iteration
+  ~1008.073200 insts-per-iteration
