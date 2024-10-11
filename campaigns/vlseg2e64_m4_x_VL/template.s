@@ -6,10 +6,10 @@
 measure:                           # @measure
     vsetivli	zero, PARAM_VL, PARAM_SEW, PARAM_LMUL, ta, ma
     .rept   250
-    vlseg2e64.v v4, (a0)
-    vlseg2e64.v v12, (a0)
-    vlseg2e64.v v20, (a0)
-    vlseg2e64.v v28, (a0)
+    vlseg2e64.v v0, (a0)
+    vlseg2e64.v v8, (a0)
+    vlseg2e64.v v16, (a0)
+    vlseg2e64.v v24, (a0)
     .endr
 	ret
 .Lfunc_end0:

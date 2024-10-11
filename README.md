@@ -108,7 +108,9 @@ Does the VL impact the runtime performance of vle64.v (unit strided load), vlse6
 
 For vle64.v, this measurement appears a lot more noisy than the vadd.vv check for VL sensitivity, but it appears there's no obvious pattern in VL impacting throughput.  The m4 operation averages ~8 cycles per instruction regardless of VL.  vlse64.v appears to again have no impact on runtime.  The m4 operation averages ~16 cycles per instruction regardless of VL.
 
-The segmented version is currently crashing and needs further investigation.
+For vlseg2e64.v, we again have a bunch of noise, but I see no obvious pattern which indicates any kind of VL sensitivity.  The results vary from about 38 cycles to about 45 cycles.
+
+So, overall, there's no indication of VL sensitivity in these runs.  It looks like these have a fixed cost at m4 (and thus probably a fixed cost at each individual LMUL.) 
 
 ### vle_LMUL_x_SEW_throughput
 
@@ -148,7 +150,7 @@ Investigating reciprocal throughput for strided loads.  There is significant var
 
 Observations:
 
-* Results seem to scale by LMUL for all LMULs (including fractional ones).
+* Results seem to scale by LMUL for all LMULs (including fractional ones).  
 * These are done with a constant stride of 16 bytes (not elements).  As such, these are accessing significantly more memory than the corresponding entries in the vle tables.  At SEW=64 this is 2x, at SEW=e8 this is 16x.
 * Because of the constant stride, the memory accesses overlap in the same cache lines with relatively high frequency, and the hardware *may* be optimizing that case.  
 
@@ -168,4 +170,4 @@ Here's two runs with a constant stride of 160 bytes.  This should be long enough
 | e32 | nan   | nan   | ~3.96  | ~7.84  | ~13.79 | ~28.94  | ~51.91  |
 | e64 | nan   | nan   | nan    | ~3.96  | ~7.83  | ~15.61  | ~27.41  |
 
-This result seems roughly consistent with a memory system which can issue one 128 bit load per cycle.  Though I do not understand the high variance, in particular the fact that sometimes the result seems to take less than one cycle per element (when each element should it's own load).
+This result seems roughly consistent with a memory system which can issue one 128 bit load per cycle, and is issuing one load per element.  Though I do not understand the high variance, in particular the fact that sometimes the result seems to take less than one cycle per element (when each element should it's own load).
