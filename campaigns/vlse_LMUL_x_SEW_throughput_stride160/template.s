@@ -4,7 +4,7 @@
 	.p2align	1
 	.type	measure,@function
 measure:                           # @measure
-    li a1, 16
+    li a1, 160
     vsetvli	a2, zero, PARAM_SEW, PARAM_LMUL, ta, ma
     .rept   200
     vlsPARAM_SEW.v v0, (a0), a1

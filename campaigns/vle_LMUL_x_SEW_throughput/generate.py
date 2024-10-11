@@ -11,7 +11,7 @@ with open(template, "r") as f:
             s = template;
             s = s.replace("PARAM_LMUL", LMUL);
             s = s.replace("PARAM_SEW", SEW);
-            name = "vlse-" + SEW + "_" + LMUL + "_vlmax.s"
+            name = "vle-" + SEW + "_" + LMUL + "_vlmax.s"
             print ("Generating " + name)
             with open(name, "w") as of:
                 of.write(s);

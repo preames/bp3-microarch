@@ -4,13 +4,12 @@
 	.p2align	1
 	.type	measure,@function
 measure:                           # @measure
-    li a1, 16
     vsetvli	a2, zero, PARAM_SEW, PARAM_LMUL, ta, ma
-    .rept   200
-    vlsPARAM_SEW.v v0, (a0), a1
-    vlsPARAM_SEW.v v8, (a0), a1
-    vlsPARAM_SEW.v v16, (a0), a1
-    vlsPARAM_SEW.v v24, (a0), a1
+    .rept   250
+    vlPARAM_SEW.v v0, (a0)
+    vlPARAM_SEW.v v8, (a0)
+    vlPARAM_SEW.v v16, (a0)
+    vlPARAM_SEW.v v24, (a0)
     .endr
 	ret
 .Lfunc_end0:

@@ -1,0 +1,161 @@
+Running raw.out
+Running vle-e16_m1_vlmax.out
+-9223372036852280328 cycles, -9223372036853805506 instret (before)
+-9223372036811950404 cycles, -9223372036833608331 instret (after)
+40329924 cycles, 20197175 instret elapsed
+  ~1.996810 cycles-per-inst
+  ~2016.496200 cycles-per-iteration
+  ~1009.858750 insts-per-iteration
+Running vle-e16_m2_vlmax.out
+-9223372036852271731 cycles, -9223372036853802439 instret (before)
+-9223372036771887360 cycles, -9223372036833556069 instret (after)
+80384371 cycles, 20246370 instret elapsed
+  ~3.970310 cycles-per-inst
+  ~4019.218550 cycles-per-iteration
+  ~1012.318500 insts-per-iteration
+Running vle-e16_m4_vlmax.out
+-9223372036852440380 cycles, -9223372036853870906 instret (before)
+-9223372036692011264 cycles, -9223372036833553355 instret (after)
+160429116 cycles, 20317551 instret elapsed
+  ~7.896085 cycles-per-inst
+  ~8021.455800 cycles-per-iteration
+  ~1015.877550 insts-per-iteration
+Running vle-e16_m8_vlmax.out
+-9223372036852405791 cycles, -9223372036853860666 instret (before)
+-9223372036531815370 cycles, -9223372036833391111 instret (after)
+320590421 cycles, 20469555 instret elapsed
+  ~15.661817 cycles-per-inst
+  ~16029.521050 cycles-per-iteration
+  ~1023.477750 insts-per-iteration
+Running vle-e16_mf2_vlmax.out
+-9223372036852431271 cycles, -9223372036853864380 instret (before)
+-9223372036832135366 cycles, -9223372036833693244 instret (after)
+20295905 cycles, 20171136 instret elapsed
+  ~1.006186 cycles-per-inst
+  ~1014.795250 cycles-per-iteration
+  ~1008.556800 insts-per-iteration
+Running vle-e16_mf4_vlmax.out
+-9223372036852338932 cycles, -9223372036853800648 instret (before)
+-9223372036832006377 cycles, -9223372036833617682 instret (after)
+20332555 cycles, 20182966 instret elapsed
+  ~1.007412 cycles-per-inst
+  ~1016.627750 cycles-per-iteration
+  ~1009.148300 insts-per-iteration
+Running vle-e16_mf8_vlmax.out
+Running vle-e32_m1_vlmax.out
+-9223372036852273786 cycles, -9223372036853798139 instret (before)
+-9223372036811849494 cycles, -9223372036833572810 instret (after)
+40424292 cycles, 20225329 instret elapsed
+  ~1.998696 cycles-per-inst
+  ~2021.214600 cycles-per-iteration
+  ~1011.266450 insts-per-iteration
+Running vle-e32_m2_vlmax.out
+-9223372036852315721 cycles, -9223372036853799588 instret (before)
+-9223372036771801784 cycles, -9223372036833516049 instret (after)
+80513937 cycles, 20283539 instret elapsed
+  ~3.969423 cycles-per-inst
+  ~4025.696850 cycles-per-iteration
+  ~1014.176950 insts-per-iteration
+Running vle-e32_m4_vlmax.out
+-9223372036852379121 cycles, -9223372036853812437 instret (before)
+-9223372036691485246 cycles, -9223372036833278849 instret (after)
+160893875 cycles, 20533588 instret elapsed
+  ~7.835643 cycles-per-inst
+  ~8044.693750 cycles-per-iteration
+  ~1026.679400 insts-per-iteration
+Running vle-e32_m8_vlmax.out
+-9223372036852390197 cycles, -9223372036853870219 instret (before)
+-9223372036531708094 cycles, -9223372036833384972 instret (after)
+320682103 cycles, 20485247 instret elapsed
+  ~15.654295 cycles-per-inst
+  ~16034.105150 cycles-per-iteration
+  ~1024.262350 insts-per-iteration
+Running vle-e32_mf2_vlmax.out
+-9223372036852282585 cycles, -9223372036853793647 instret (before)
+-9223372036831971121 cycles, -9223372036833616466 instret (after)
+20311464 cycles, 20177181 instret elapsed
+  ~1.006655 cycles-per-inst
+  ~1015.573200 cycles-per-iteration
+  ~1008.859050 insts-per-iteration
+Running vle-e32_mf4_vlmax.out
+Running vle-e32_mf8_vlmax.out
+Running vle-e64_m1_vlmax.out
+-9223372036852316465 cycles, -9223372036853803968 instret (before)
+-9223372036811894446 cycles, -9223372036833589754 instret (after)
+40422019 cycles, 20214214 instret elapsed
+  ~1.999683 cycles-per-inst
+  ~2021.100950 cycles-per-iteration
+  ~1010.710700 insts-per-iteration
+Running vle-e64_m2_vlmax.out
+-9223372036852438119 cycles, -9223372036853870672 instret (before)
+-9223372036771887861 cycles, -9223372036833607253 instret (after)
+80550258 cycles, 20263419 instret elapsed
+  ~3.975156 cycles-per-inst
+  ~4027.512900 cycles-per-iteration
+  ~1013.170950 insts-per-iteration
+Running vle-e64_m4_vlmax.out
+-9223372036852336733 cycles, -9223372036853794511 instret (before)
+-9223372036691911289 cycles, -9223372036833477633 instret (after)
+160425444 cycles, 20316878 instret elapsed
+  ~7.896166 cycles-per-inst
+  ~8021.272200 cycles-per-iteration
+  ~1015.843900 insts-per-iteration
+Running vle-e64_m8_vlmax.out
+-9223372036852348395 cycles, -9223372036853857632 instret (before)
+-9223372036531743502 cycles, -9223372036833389071 instret (after)
+320604893 cycles, 20468561 instret elapsed
+  ~15.663284 cycles-per-inst
+  ~16030.244650 cycles-per-iteration
+  ~1023.428050 insts-per-iteration
+Running vle-e64_mf2_vlmax.out
+Running vle-e64_mf4_vlmax.out
+Running vle-e64_mf8_vlmax.out
+Running vle-e8_m1_vlmax.out
+-9223372036852331373 cycles, -9223372036853797925 instret (before)
+-9223372036812030446 cycles, -9223372036833606906 instret (after)
+40300927 cycles, 20191019 instret elapsed
+  ~1.995983 cycles-per-inst
+  ~2015.046350 cycles-per-iteration
+  ~1009.550950 insts-per-iteration
+Running vle-e8_m2_vlmax.out
+-9223372036852407206 cycles, -9223372036853862889 instret (before)
+-9223372036771967513 cycles, -9223372036833601378 instret (after)
+80439693 cycles, 20261511 instret elapsed
+  ~3.970074 cycles-per-inst
+  ~4021.984650 cycles-per-iteration
+  ~1013.075550 insts-per-iteration
+Running vle-e8_m4_vlmax.out
+-9223372036852367056 cycles, -9223372036853797300 instret (before)
+-9223372036691789767 cycles, -9223372036833429635 instret (after)
+160577289 cycles, 20367665 instret elapsed
+  ~7.883932 cycles-per-inst
+  ~8028.864450 cycles-per-iteration
+  ~1018.383250 insts-per-iteration
+Running vle-e8_m8_vlmax.out
+-9223372036852244624 cycles, -9223372036853763875 instret (before)
+-9223372036529945927 cycles, -9223372036832567759 instret (after)
+322298697 cycles, 21196116 instret elapsed
+  ~15.205554 cycles-per-inst
+  ~16114.934850 cycles-per-iteration
+  ~1059.805800 insts-per-iteration
+Running vle-e8_mf2_vlmax.out
+-9223372036852358089 cycles, -9223372036853808971 instret (before)
+-9223372036832051503 cycles, -9223372036833636850 instret (after)
+20306586 cycles, 20172121 instret elapsed
+  ~1.006666 cycles-per-inst
+  ~1015.329300 cycles-per-iteration
+  ~1008.606050 insts-per-iteration
+Running vle-e8_mf4_vlmax.out
+-9223372036852273138 cycles, -9223372036853778346 instret (before)
+-9223372036831631724 cycles, -9223372036833493540 instret (after)
+20641414 cycles, 20284806 instret elapsed
+  ~1.017580 cycles-per-inst
+  ~1032.070700 cycles-per-iteration
+  ~1014.240300 insts-per-iteration
+Running vle-e8_mf8_vlmax.out
+-9223372036852256995 cycles, -9223372036853776325 instret (before)
+-9223372036831969647 cycles, -9223372036833603438 instret (after)
+20287348 cycles, 20172887 instret elapsed
+  ~1.005674 cycles-per-inst
+  ~1014.367400 cycles-per-iteration
+  ~1008.644350 insts-per-iteration
