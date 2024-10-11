@@ -228,3 +228,4 @@ How does vlseg NF vary with NF, LMUL, and SEW?  From above, we strongly suspect 
 
 Observation:
 * It looks like there's some kind of change between NF2-4 and NF5-8.  The later appear to scale roughly with VLMAX (i.e. the distinct number of segments).  The NF2, NF3, and NF4 cases are clearly different.  I'm guessing these are done as a single wide load followed by a couple of special shuffles.
+* Given the apparent difference in implementations, I went back and ran a VL sweep at both {e64, NF8, m1} and {e8, NF8, m1} to confirm there was no VL sensativity there either.  There's a ton of variability in the later one particular, but no obvious VL relevant pattern.
