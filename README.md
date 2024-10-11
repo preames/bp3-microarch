@@ -171,3 +171,60 @@ Here's two runs with a constant stride of 160 bytes.  This should be long enough
 | e64 | nan   | nan   | nan    | ~3.96  | ~7.83  | ~15.61  | ~27.41  |
 
 This result seems roughly consistent with a memory system which can issue one 128 bit load per cycle, and is issuing one load per element.  Though I do not understand the high variance, in particular the fact that sometimes the result seems to take less than one cycle per element (when each element should it's own load).
+
+
+### vlseg_LMUL_x_SEW_throughput
+
+How does vlseg NF vary with NF, LMUL, and SEW?  From above, we strongly suspect that it does not vary with respect to VL.
+
+| NF2 | mf8   | mf4   | mf2   | m1     | m2     | m4     |   m8 |
+|:----|:------|:------|:------|:-------|:-------|:-------|-----:|
+| e8  | ~4.93 | ~4.84 | ~5.93 | ~11.77 | ~20.92 | ~38.02 |  nan |
+| e16 | nan   | ~4.95 | ~5.93 | ~11.79 | ~23.13 | ~44.81 |  nan |
+| e32 | nan   | nan   | ~5.93 | ~11.77 | ~21.11 | ~45.58 |  nan |
+| e64 | nan   | nan   | nan   | ~11.77 | ~20.05 | ~39.23 |  nan |
+
+| NF3 | mf8   | mf4   | mf2   | m1     | m2     |   m4 |   m8 |
+|:----|:------|:------|:------|:-------|:-------|-----:|-----:|
+| e8  | ~6.82 | ~7.89 | ~9.82 | ~19.04 | ~31.95 |  nan |  nan |
+| e16 | nan   | ~7.89 | ~9.82 | ~18.75 | ~36.14 |  nan |  nan |
+| e32 | nan   | nan   | ~9.82 | ~18.86 | ~36.38 |  nan |  nan |
+| e64 | nan   | nan   | nan   | ~17.58 | ~34.57 |  nan |  nan |
+
+| NF4 | mf8   | mf4   | mf2    | m1     | m2     |   m4 |   m8 |
+|:----|:------|:------|:-------|:-------|:-------|-----:|-----:|
+| e8  | ~8.87 | ~9.84 | ~11.78 | ~23.27 | ~45.58 |  nan |  nan |
+| e16 | nan   | ~9.82 | ~11.79 | ~23.21 | ~45.44 |  nan |  nan |
+| e32 | nan   | nan   | ~11.75 | ~20.35 | ~45.51 |  nan |  nan |
+| e64 | nan   | nan   | nan    | ~23.25 | ~45.62 |  nan |  nan |
+
+| NF5 | mf8    | mf4    | mf2    | m1      |   m2 |   m4 |   m8 |
+|:----|:-------|:-------|:-------|:--------|-----:|-----:|-----:|
+| e8  | ~19.50 | ~38.22 | ~72.89 | ~137.19 |  nan |  nan |  nan |
+| e16 | nan    | ~19.49 | ~38.11 | ~73.68  |  nan |  nan |  nan |
+| e32 | nan    | nan    | ~19.43 | ~38.25  |  nan |  nan |  nan |
+| e64 | nan    | nan    | nan    | ~19.45  |  nan |  nan |  nan |
+
+| NF6 | mf8    | mf4    | mf2    | m1      |   m2 |   m4 |   m8 |
+|:----|:-------|:-------|:-------|:--------|-----:|-----:|-----:|
+| e8  | ~23.25 | ~45.50 | ~86.21 | ~160.46 |  nan |  nan |  nan |
+| e16 | nan    | ~23.27 | ~44.49 | ~87.08  |  nan |  nan |  nan |
+| e32 | nan    | nan    | ~23.28 | ~45.54  |  nan |  nan |  nan |
+| e64 | nan    | nan    | nan    | ~23.29  |  nan |  nan |  nan |
+
+| NF7 | mf8    | mf4    | mf2    | m1      |   m2 |   m4 |   m8 |
+|:----|:-------|:-------|:-------|:--------|-----:|-----:|-----:|
+| e8  | ~27.06 | ~52.61 | ~74.48 | ~181.47 |  nan |  nan |  nan |
+| e16 | nan    | ~27.06 | ~45.61 | ~100.49 |  nan |  nan |  nan |
+| e32 | nan    | nan    | ~23.64 | ~51.89  |  nan |  nan |  nan |
+| e64 | nan    | nan    | nan    | ~22.87  |  nan |  nan |  nan |
+
+| NF8 | mf8    | mf4    | mf2     | m1      |   m2 |   m4 |   m8 |
+|:----|:-------|:-------|:--------|:--------|-----:|-----:|-----:|
+| e8  | ~30.82 | ~59.74 | ~108.35 | ~201.51 |  nan |  nan |  nan |
+| e16 | nan    | ~29.02 | ~54.41  | ~86.09  |  nan |  nan |  nan |
+| e32 | nan    | nan    | ~26.47  | ~57.84  |  nan |  nan |  nan |
+| e64 | nan    | nan    | nan     | ~30.09  |  nan |  nan |  nan |
+
+Observation:
+* It looks like there's some kind of change between NF2-4 and NF5-8.  The later appear to scale roughly with VLMAX (i.e. the distinct number of segments).  The NF2, NF3, and NF4 cases are clearly different.  I'm guessing these are done as a single wide load followed by a couple of special shuffles.

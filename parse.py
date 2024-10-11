@@ -33,6 +33,11 @@ with open(fname, "r") as f:
                     continue
                 pass
             assert(SEW != None and LMUL != None)
+            if active.startswith("vlseg"):
+                NF = active[5:6];
+                if sys.argv[2] and NF != sys.argv[2]:
+                    continue
+                pass
             if LMUL not in results:
                 results[LMUL] = {}
             results[LMUL][SEW] = num
