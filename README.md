@@ -54,7 +54,10 @@ Observations:
 * We appear to half the throughput as we move from m1 to m2 to m4.  I don't have m8 data here, but given the latency data (below), that trend probably continues.  Nothing particularly surprising here.
 * Interestingly, we *don't* see a difference between mf2 and m1.  This is slightly surprising given we expect to have a DLEN=VLEN/2.  
 * SEW has no impact on throughput for this instruction.
-* The errors in fractional LMUL are unexpected and deserve further investigation.
+* The errors in fractional LMUL are due to this part of the specification:
+  > For a given supported fractional LMUL setting, implementations must support SEW settings between SEWMIN and LMUL * ELEN, inclusive.
+
+  I.e. With +v SEWMIN=8 and ELEN=64, so at mf8 the only supported SEW is e8.
 
 
 ### vadd_vv_LMUL_x_SEW_latency
