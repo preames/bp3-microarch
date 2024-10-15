@@ -9,10 +9,11 @@ void measure(char*);
 #define N 20000
 
 int main() {
+  char A[256*1024];
+  measure(A); // Warm up caches
   uint64_t cycles_begin = 0, instrs_begin = 0;
   read_counters(&cycles_begin, &instrs_begin);
   printf("%ld cycles, %ld instret (before)\n", cycles_begin, instrs_begin);
-  char A[256*1024];
   for (int i = 0; i < N; i++)
     measure(A);
 
