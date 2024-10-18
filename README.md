@@ -123,10 +123,10 @@ Note: I used 4-wide independent chains and included V0 in the destination list. 
 
 |     | mf8   | mf4   | mf2   | m1    | m2    | m4    | m8     |
 |:----|:------|:------|:------|:------|:------|:------|:-------|
-| e8  | ~1.00 | ~1.01 | ~1.00 | ~1.99 | ~3.97 | ~7.88 | ~15.20 |
-| e16 | nan   | ~1.00 | ~1.00 | ~1.99 | ~3.97 | ~7.89 | ~15.66 |
-| e32 | nan   | nan   | ~1.00 | ~1.99 | ~3.96 | ~7.83 | ~15.65 |
-| e64 | nan   | nan   | nan   | ~1.99 | ~3.97 | ~7.89 | ~15.66 |
+| e8  | ~1.00 | ~1.00 | ~1.00 | ~2.00 | ~3.97 | ~7.90 | ~15.75 |
+| e16 | nan   | ~1.00 | ~1.00 | ~1.99 | ~3.97 | ~7.91 | ~15.72 |
+| e32 | nan   | nan   | ~1.00 | ~1.99 | ~3.97 | ~7.91 | ~15.74 |
+| e64 | nan   | nan   | nan   | ~1.99 | ~3.97 | ~7.91 | ~15.74 |
 
 Observation:
 * More or less linear scaling as LMUL increases
@@ -134,22 +134,14 @@ Observation:
 
 ### vlse_LMUL_x_SEW_throughput
 
-Investigating reciprocal throughput for strided loads.  There is significant variation from run to run here, the two tables represent two runs immediately back to back.
+Investigating reciprocal throughput for strided loads.
 
-|     | mf8   | mf4   | mf2    | m1     | m2     | m4     | m8      |
-|:----|:------|:------|:-------|:-------|:-------|:-------|:--------|
-| e8  | ~3.91 | ~7.86 | ~14.11 | ~30.70 | ~59.59 | ~86.76 | ~200.06 |
-| e16 | nan   | ~3.96 | ~7.87  | ~15.14 | ~30.69 | ~59.62 | ~89.30  |
-| e32 | nan   | nan   | ~3.96  | ~7.87  | ~15.58 | ~30.73 | ~59.54  |
-| e64 | nan   | nan   | nan    | ~3.96  | ~7.83  | ~15.44 | ~30.45  |
-
-
-|     | mf8   | mf4   | mf2    | m1     | m2     | m4     | m8      |
-|:----|:------|:------|:-------|:-------|:-------|:-------|:--------|
-| e8  | ~3.96 | ~7.87 | ~14.79 | ~30.48 | ~59.32 | ~91.86 | ~202.49 |
-| e16 | nan   | ~3.96 | ~7.86  | ~15.55 | ~28.97 | ~58.53 | ~83.55  |
-| e32 | nan   | nan   | ~3.90  | ~7.78  | ~15.55 | ~27.61 | ~59.63  |
-| e64 | nan   | nan   | nan    | ~3.95  | ~7.87  | ~14.11 | ~30.38  |
+|     | mf8   | mf4   | mf2    | m1     | m2     | m4      | m8      |
+|:----|:------|:------|:-------|:-------|:-------|:--------|:--------|
+| e8  | ~3.97 | ~7.89 | ~15.70 | ~30.83 | ~59.95 | ~116.91 | ~217.52 |
+| e16 | nan   | ~3.96 | ~7.87  | ~15.65 | ~31.06 | ~60.78  | ~115.26 |
+| e32 | nan   | nan   | ~3.96  | ~7.89  | ~15.69 | ~31.06  | ~60.81  |
+| e64 | nan   | nan   | nan    | ~3.96  | ~7.89  | ~15.65  | ~30.99  |
 
 Observations:
 
@@ -159,19 +151,19 @@ Observations:
 
 Here's two runs with a constant stride of 160 bytes.  This should be long enough that each access lands in it's own cache line (for most reasonable cache structures).
 
-|     | mf8   | mf4   | mf2    | m1     | m2     | m4      | m8      |
-|:----|:------|:------|:-------|:-------|:-------|:--------|:--------|
-| e8  | ~3.96 | ~7.47 | ~14.54 | ~27.23 | ~39.34 | ~518.41 | ~501.33 |
-| e16 | nan   | ~3.95 | ~7.31  | ~15.28 | ~28.51 | ~58.56  | ~413.34 |
-| e32 | nan   | nan   | ~3.93  | ~7.87  | ~15.60 | ~30.03  | ~50.31  |
-| e64 | nan   | nan   | nan    | ~3.96  | ~7.79  | ~12.49  | ~27.62  |
+|     | mf8   | mf4   | mf2    | m1     | m2     | m4      | m8       |
+|:----|:------|:------|:-------|:-------|:-------|:--------|:---------|
+| e8  | ~3.96 | ~7.89 | ~15.70 | ~31.03 | ~60.90 | ~653.86 | ~1204.30 |
+| e16 | nan   | ~3.96 | ~7.90  | ~15.65 | ~31.03 | ~60.03  | ~668.94  |
+| e32 | nan   | nan   | ~3.96  | ~7.89  | ~15.70 | ~30.82  | ~60.91   |
+| e64 | nan   | nan   | nan    | ~3.96  | ~7.89  | ~15.70  | ~31.02   |
 
-|     | mf8   | mf4   | mf2    | m1     | m2     | m4      | m8      |
-|:----|:------|:------|:-------|:-------|:-------|:--------|:--------|
-| e8  | ~3.96 | ~7.87 | ~14.72 | ~30.68 | ~59.62 | ~261.31 | ~864.76 |
-| e16 | nan   | ~3.89 | ~7.47  | ~15.62 | ~27.12 | ~49.02  | ~458.83 |
-| e32 | nan   | nan   | ~3.96  | ~7.84  | ~13.79 | ~28.94  | ~51.91  |
-| e64 | nan   | nan   | nan    | ~3.96  | ~7.83  | ~15.61  | ~27.41  |
+|     | mf8   | mf4   | mf2    | m1     | m2     | m4      | m8       |
+|:----|:------|:------|:-------|:-------|:-------|:--------|:---------|
+| e8  | ~3.96 | ~7.90 | ~15.64 | ~30.58 | ~60.85 | ~631.87 | ~1168.03 |
+| e16 | nan   | ~3.97 | ~7.90  | ~15.65 | ~31.05 | ~59.94  | ~732.29  |
+| e32 | nan   | nan   | ~3.96  | ~7.89  | ~15.70 | ~31.04  | ~60.64   |
+| e64 | nan   | nan   | nan    | ~3.97  | ~7.89  | ~15.69  | ~30.84   |
 
 This result seems roughly consistent with a memory system which can issue one 128 bit load per cycle, and is issuing one load per element.  Though I do not understand the high variance, in particular the fact that sometimes the result seems to take less than one cycle per element (when each element should it's own load).
 
@@ -182,52 +174,52 @@ How does vlseg NF vary with NF, LMUL, and SEW?  From above, we strongly suspect 
 
 | NF2 | mf8   | mf4   | mf2   | m1     | m2     | m4     |   m8 |
 |:----|:------|:------|:------|:-------|:-------|:-------|-----:|
-| e8  | ~4.93 | ~4.84 | ~5.93 | ~11.77 | ~20.92 | ~38.02 |  nan |
-| e16 | nan   | ~4.95 | ~5.93 | ~11.79 | ~23.13 | ~44.81 |  nan |
-| e32 | nan   | nan   | ~5.93 | ~11.77 | ~21.11 | ~45.58 |  nan |
-| e64 | nan   | nan   | nan   | ~11.77 | ~20.05 | ~39.23 |  nan |
+| e8  | ~4.95 | ~4.95 | ~5.94 | ~11.79 | ~23.28 | ~45.76 |  nan |
+| e16 | nan   | ~4.95 | ~5.94 | ~11.82 | ~23.37 | ~46.16 |  nan |
+| e32 | nan   | nan   | ~5.94 | ~11.81 | ~23.24 | ~45.92 |  nan |
+| e64 | nan   | nan   | nan   | ~11.83 | ~23.34 | ~46.23 |  nan |
 
 | NF3 | mf8   | mf4   | mf2   | m1     | m2     |   m4 |   m8 |
 |:----|:------|:------|:------|:-------|:-------|-----:|-----:|
-| e8  | ~6.82 | ~7.89 | ~9.82 | ~19.04 | ~31.95 |  nan |  nan |
-| e16 | nan   | ~7.89 | ~9.82 | ~18.75 | ~36.14 |  nan |  nan |
-| e32 | nan   | nan   | ~9.82 | ~18.86 | ~36.38 |  nan |  nan |
-| e64 | nan   | nan   | nan   | ~17.58 | ~34.57 |  nan |  nan |
+| e8  | ~6.93 | ~7.90 | ~9.86 | ~19.59 | ~38.71 |  nan |  nan |
+| e16 | nan   | ~7.90 | ~9.87 | ~19.59 | ~38.09 |  nan |  nan |
+| e32 | nan   | nan   | ~9.87 | ~19.48 | ~38.69 |  nan |  nan |
+| e64 | nan   | nan   | nan   | ~17.61 | ~34.33 |  nan |  nan |
 
 | NF4 | mf8   | mf4   | mf2    | m1     | m2     |   m4 |   m8 |
 |:----|:------|:------|:-------|:-------|:-------|-----:|-----:|
-| e8  | ~8.87 | ~9.84 | ~11.78 | ~23.27 | ~45.58 |  nan |  nan |
-| e16 | nan   | ~9.82 | ~11.79 | ~23.21 | ~45.44 |  nan |  nan |
-| e32 | nan   | nan   | ~11.75 | ~20.35 | ~45.51 |  nan |  nan |
-| e64 | nan   | nan   | nan    | ~23.25 | ~45.62 |  nan |  nan |
+| e8  | ~8.89 | ~9.88 | ~11.82 | ~23.40 | ~45.78 |  nan |  nan |
+| e16 | nan   | ~9.83 | ~11.81 | ~23.45 | ~45.83 |  nan |  nan |
+| e32 | nan   | nan   | ~11.82 | ~23.48 | ~45.84 |  nan |  nan |
+| e64 | nan   | nan   | nan    | ~23.45 | ~45.89 |  nan |  nan |
 
 | NF5 | mf8    | mf4    | mf2    | m1      |   m2 |   m4 |   m8 |
 |:----|:-------|:-------|:-------|:--------|-----:|-----:|-----:|
-| e8  | ~19.50 | ~38.22 | ~72.89 | ~137.19 |  nan |  nan |  nan |
-| e16 | nan    | ~19.49 | ~38.11 | ~73.68  |  nan |  nan |  nan |
-| e32 | nan    | nan    | ~19.43 | ~38.25  |  nan |  nan |  nan |
-| e64 | nan    | nan    | nan    | ~19.45  |  nan |  nan |  nan |
+| e8  | ~19.61 | ~38.54 | ~75.33 | ~143.13 |  nan |  nan |  nan |
+| e16 | nan    | ~19.62 | ~38.67 | ~74.74  |  nan |  nan |  nan |
+| e32 | nan    | nan    | ~19.61 | ~38.57  |  nan |  nan |  nan |
+| e64 | nan    | nan    | nan    | ~19.56  |  nan |  nan |  nan |
 
 | NF6 | mf8    | mf4    | mf2    | m1      |   m2 |   m4 |   m8 |
 |:----|:-------|:-------|:-------|:--------|-----:|-----:|-----:|
-| e8  | ~23.25 | ~45.50 | ~86.21 | ~160.46 |  nan |  nan |  nan |
-| e16 | nan    | ~23.27 | ~44.49 | ~87.08  |  nan |  nan |  nan |
-| e32 | nan    | nan    | ~23.28 | ~45.54  |  nan |  nan |  nan |
-| e64 | nan    | nan    | nan    | ~23.29  |  nan |  nan |  nan |
+| e8  | ~23.42 | ~45.46 | ~89.43 | ~166.19 |  nan |  nan |  nan |
+| e16 | nan    | ~23.45 | ~45.96 | ~88.50  |  nan |  nan |  nan |
+| e32 | nan    | nan    | ~23.39 | ~46.17  |  nan |  nan |  nan |
+| e64 | nan    | nan    | nan    | ~23.24  |  nan |  nan |  nan |
 
-| NF7 | mf8    | mf4    | mf2    | m1      |   m2 |   m4 |   m8 |
-|:----|:-------|:-------|:-------|:--------|-----:|-----:|-----:|
-| e8  | ~27.06 | ~52.61 | ~74.48 | ~181.47 |  nan |  nan |  nan |
-| e16 | nan    | ~27.06 | ~45.61 | ~100.49 |  nan |  nan |  nan |
-| e32 | nan    | nan    | ~23.64 | ~51.89  |  nan |  nan |  nan |
-| e64 | nan    | nan    | nan    | ~22.87  |  nan |  nan |  nan |
+| NF7 | mf8    | mf4    | mf2     | m1      |   m2 |   m4 |   m8 |
+|:----|:-------|:-------|:--------|:--------|-----:|-----:|-----:|
+| e8  | ~27.20 | ~53.34 | ~102.10 | ~188.91 |  nan |  nan |  nan |
+| e16 | nan    | ~27.24 | ~52.94  | ~101.70 |  nan |  nan |  nan |
+| e32 | nan    | nan    | ~27.16  | ~53.17  |  nan |  nan |  nan |
+| e64 | nan    | nan    | nan     | ~27.26  |  nan |  nan |  nan |
 
 | NF8 | mf8    | mf4    | mf2     | m1      |   m2 |   m4 |   m8 |
 |:----|:-------|:-------|:--------|:--------|-----:|-----:|-----:|
-| e8  | ~30.82 | ~59.74 | ~108.35 | ~201.51 |  nan |  nan |  nan |
-| e16 | nan    | ~29.02 | ~54.41  | ~86.09  |  nan |  nan |  nan |
-| e32 | nan    | nan    | ~26.47  | ~57.84  |  nan |  nan |  nan |
-| e64 | nan    | nan    | nan     | ~30.09  |  nan |  nan |  nan |
+| e8  | ~30.97 | ~60.45 | ~114.86 | ~207.97 |  nan |  nan |  nan |
+| e16 | nan    | ~31.00 | ~60.67  | ~115.57 |  nan |  nan |  nan |
+| e32 | nan    | nan    | ~30.98  | ~60.48  |  nan |  nan |  nan |
+| e64 | nan    | nan    | nan     | ~31.01  |  nan |  nan |  nan |
 
 Observation:
 * It looks like there's some kind of change between NF2-4 and NF5-8.  The later appear to scale roughly with VLMAX (i.e. the distinct number of segments).  The NF2, NF3, and NF4 cases are clearly different.  I'm guessing these are done as a single wide load followed by a couple of special shuffles.
